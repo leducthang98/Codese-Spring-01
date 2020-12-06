@@ -26,7 +26,7 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
-    public boolean deleteBook(int bookId) {
-        return bookService.deleteBook(bookId);
-    }
+//    public boolean deleteBook(int bookId) {
+//        return bookService.deleteBook(bookId);
+//    }
 }

@@ -6,12 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookRepository {
-    public List<BookWithAuthorName> getAllBooks() {
-        // query JDBC Driver
-        // fake du lieu
-        //query...
-        //tra ve du lieu
-        List<BookWithAuthorName> listBooks = new ArrayList<>();
+    List<BookWithAuthorName> listBooks;
+
+    public BookRepository() {
+        listBooks = new ArrayList<>();
         BookWithAuthorName book1 = new BookWithAuthorName();
         book1.id = 0;
         book1.name = "sach1";
@@ -26,7 +24,13 @@ public class BookRepository {
 
         listBooks.add(book1);
         listBooks.add(book2);
+    }
 
+    public List<BookWithAuthorName> getAllBooks() {
+        // query JDBC Driver
+        // fake du lieu
+        //query...
+        //tra ve du lieu
         return listBooks;
     }
 }

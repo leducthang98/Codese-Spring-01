@@ -13,6 +13,9 @@ public class BookWithAuthorName extends Book {
         this.authorName = authorName;
     }
 
+    public BookWithAuthorName() {
+    }
+
     @Override
     public String toString() {
         return "BookWithAuthorName{" +
