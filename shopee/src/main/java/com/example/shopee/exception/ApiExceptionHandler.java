@@ -15,7 +15,7 @@ public class ApiExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public String unknownErr(Exception e, WebRequest request){
-        return "Unknown error";
+        return e.getMessage();
     }
 
     @ExceptionHandler(MissingServletRequestParameterException.class)

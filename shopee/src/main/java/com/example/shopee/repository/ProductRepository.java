@@ -17,7 +17,7 @@ public class ProductRepository {
 
     public List<Product> getAllProduct(String sortColumn, Integer sortType) {
         // 0: ASC, 1: DESC, default ASC
-        String sortStatus = sortType !=null && sortType == 0
+        String sortStatus = sortType != null && sortType == 0
                 ? " ASC"
                 : " DESC";
 //        if (sortType != null) {
@@ -32,5 +32,15 @@ public class ProductRepository {
         System.out.printf("sql:" + sql);
 
         return jdbcTemplate.query(sql, new ProductMapper());
+    }
+
+    public List<Product> getAllProduct2(Integer limit, Integer offset) {
+        String sql = "select * from Product limit ? offset ?";
+        return jdbcTemplate.query(sql, new ProductMapper(), new Object[]{limit, offset});
+    }
+
+    public Integer countProduct() {
+        String sql = "select count(productID) from Product";
+        return jdbcTemplate.queryForObject(sql, Integer.class);
     }
 }
