@@ -17,28 +17,6 @@ public class ShopeeApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ShopeeApplication.class, args);
-//        String secretKey = "codedidungso.me";
-//        int userId = 3;
-//        System.out.println("generate token...");
-//        String token = generateToken(userId, secretKey);
-//        System.out.println("token:" + token);
-//
-//        System.out.println("authenticaton");
-//        // user gui api den kem token , server se decode token lay ra user
-//        // info
-//        System.out.println("decode token...");
-//        int userIdDecoded = verifyToken(token, secretKey);
-//        System.out.println(userIdDecoded);
-
-        // co id cua nguoi dung roi
-        String token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjE2MzMzMDMxLCJleHAiOjE2MTY5Mzc4MzF9.6C9Ud9aVuzjbYe3wjI2RiIJbyh8wdllN8YLMg710kwHMFzAUIz9FNnGIGrXK_4gUZEDoZxVhAVj96ds2nLcw7A";
-
-        System.out.println("verify token");
-        String userIdDecoded = verifyToken(token);
-        System.out.println(userIdDecoded);
-        //
-
-
     }
 
     public static String generateToken(int userId) {

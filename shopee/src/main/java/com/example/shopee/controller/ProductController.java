@@ -1,21 +1,20 @@
 package com.example.shopee.controller;
 
 import com.example.shopee.dto.ListProductWithPagination;
+import com.example.shopee.model.Account;
 import com.example.shopee.model.Product;
 import com.example.shopee.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.MissingServletRequestParameterException;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/product")
-public class ProductController {
+public class ProductController extends BaseController {
+
 
     @Autowired
     ProductService productService;

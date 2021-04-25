@@ -20,10 +20,17 @@ public class AccountRepository {
             return false;
         }
     }
-    public Integer check(String email , String password){
-        String sql = "select accountID from Account where email = ? and password = ? ;" ;
-        Integer  ID = jdbcTemplate.update(sql ,new Object[]{email, password});
+
+    public Integer check(String email, String password) {
+        String sql = "select accountID from Account where email = ? and password = ? ;";
+        Integer ID = jdbcTemplate.update(sql, new Object[]{email, password});
         return ID;
     }
 
+    public Account getAccountById(String id) {
+        return new Account();
+    }
+
 }
+
+// infrastructure pattern

@@ -21,28 +21,27 @@ public class AccountController {
     @Autowired
     AccountService accountService;
 
-    @PostMapping("/create")
-    public Account register(@RequestBody(required = true) RegistAccountDto registAccountDto) throws Exception {
-        Account account = new Account();
-
-        String hashPassword = Encryptor.bcryptHash(registAccountDto.getPassword());
-        UUID id = UUID.randomUUID();
-
-        account.setAccountID(id.toString());
-        account.setRole("USER");
-        account.setDeleted(0);
-        account.setPassword(hashPassword);
-        account.setDisplay(registAccountDto.getDisplay());
-        account.setEmail(registAccountDto.getEmail());
-
-        Boolean result = accountService.regist(account);
-        if (result) {
-            return account;
-        } else {
-            throw new Exception("Fail to regist");
-        }
-
-    }
-
+//    @PostMapping("/create")
+//    public Account register(@RequestBody(required = true) RegistAccountDto registAccountDto) throws Exception {
+//        Account account = new Account();
+//
+//        String hashPassword = Encryptor.bcryptHash(registAccountDto.getPassword());
+//        UUID id = UUID.randomUUID();
+//
+//        account.setAccountID(id.toString());
+//        account.setRole("USER");
+//        account.setDeleted(0);
+//        account.setPassword(hashPassword);
+//        account.setDisplay(registAccountDto.getDisplay());
+//        account.setEmail(registAccountDto.getEmail());
+//
+//        Boolean result = accountService.regist(account);
+//        if (result) {
+//            return account;
+//        } else {
+//            throw new Exception("Fail to regist");
+//        }
+//
+//    }
 
 }
